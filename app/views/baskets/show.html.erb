@@ -1,0 +1,52 @@
+<h1>Корзина</h1>
+
+
+<!-- <p>
+  <b>Name:</b>
+  <%= @basket.name %>
+</p> -->
+<%s=0%>
+<table class="table">
+	<tr><th>Наименование</th>
+		<th>цена за ед.</th>
+		<th>количество</th>
+		<th>сумма</th>
+		<th>Удалить</th>
+	</tr>
+
+<%@basket.orders.each do |p|%>
+<tr>
+	<td><%= p.product.name%></td>
+	<td><%=number_to_currency(p.product.price, :format => "%n %u",:unit => "тг.",  :delimiter => " ",:precision => 0)%></td>
+	<td class="form-inline"><%= form_for( p, :url => {:controller=>"orders",:action => "update",:id =>p.id},:class => "well form-inline") do |f|%>
+			
+			<%=f.number_field  :count,:class=>"span1"%>
+			<button type="submit" class="btn">Обновить</button>
+			<%end%>
+	</td>
+	<td><%s=s+p.product.price*p.count%><%=number_to_currency(p.product.price*p.count, :format => "%n %u",:unit => "тг.",  :delimiter => " ",:precision => 0)%></td>
+	<td><%= link_to 'X', p, :method => :delete, :data => { :confirm => 'Удалить?'} %></td>
+	
+</tr>
+<%end%>
+<tr><th></th>
+		<th></th>
+		<th>Общая сумма:</th>
+		<th><%=number_to_currency(s, :format => "%n %u",:unit => "тг.",  :delimiter => " ",:precision => 0)%></th>
+		<th></th>
+	</tr>
+<tr><th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+</table>
+<div class="row">
+	<div class=span7>
+		<a class="btn btn-success" href="/"><i class="icon-arrow-left icon-white"></i> Обратно в магазин</a>
+	</div>
+	<div class=span2>
+		<a class="btn btn-danger" href="/senders/new">Оформить заказ <i class="icon-arrow-right icon-white"></i> </a>
+	</div>
+</div>

@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  email: MyString
+  address: MyString
+  tel: MyString
+  commet: MyString
+  product_id: 1
+  sicret: MyString
+  basket_id: 1
+  buy: 1
+
+two:
+  email: MyString
+  address: MyString
+  tel: MyString
+  commet: MyString
+  product_id: 1
+  sicret: MyString
+  basket_id: 1
+  buy: 1

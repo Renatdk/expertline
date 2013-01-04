@@ -1,0 +1,37 @@
+<div class="row">
+  <%@products.each do |p|%>
+    <div class="span2">
+      
+          <a href="/products/<%=p.id%>" class="thumbnail" trigger="focus" rel="popover" 
+                data-content=" <b>6'' E-Ink Pearl</b> дисплей      
+                <b>1 месяц</b> работы без подзарядки<br>
+                <b>Вес 170</b> грамм<br>
+                <b>Wi-Fi</b> модуль" data-original-title="<%=p.name%>">
+                
+                <%=image_tag p.title_image%>
+          </a>
+      
+    </div>
+  <%end%>
+</div>
+
+<div class="row">
+    
+<div class="span4">
+  <p>
+  <img src="<%= @product.main_image %>">
+</p>
+</div>
+
+<div class="span5">
+  <p>
+<h1><%= @product.name %> <small><%= @product.price %>тг.</small></h1>
+<%=link_to  "Купить", {:controller =>'orders', :action=>'new',:product_id=>@product.id},:class=>"btn btn-danger"%>
+
+<p>
+  <%=raw @product.content %>
+</p>
+
+</div>
+
+</div>
