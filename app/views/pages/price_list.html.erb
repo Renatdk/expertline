@@ -1,0 +1,12 @@
+
+<table class="table table-condensed table-striped table-bordered">
+<tr>
+	<th>Наименование</th><th>Цена</th>
+</tr>
+<%@posts.each do |p|%>
+
+<tr>
+	<td><%=p.title%></td><td><%=number_to_currency(p.price, :format => "%n %u",:unit => "тг.",  :delimiter => " ",:precision => 0)%></td>
+</tr>
+<%end%>
+</table>

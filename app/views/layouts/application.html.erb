@@ -30,12 +30,11 @@
           <div class="container nav-collapse">
             <ul class="nav">
               <li><%= link_to "Оплата и доставка", Page.where(:title=>"Оплата и доставка").first  %></li>
-              <li><%= link_to "Прайс-лист", "/path2"  %></li>
-              <li><%= link_to "Корзина", "/path3"  %></li>
+              <li><%= link_to "Прайс-лист", :controller => :static_pages, :action => :price_list   %></li>
               <li><%= link_to "Контакты", Page.where(:title=>"Контакты").first  %></li>
-              <li><%= link_to "Блог", "/path3"  %></li> 
-              <li><%= link_to "Вакансии", "/path3"  %></li>
-              <li><%= link_to "Сотрудничество", "/path3"  %></li>
+              <li><%= link_to "Блог", "#"  %></li> 
+              <li><%= link_to "Вакансии", "#"  %></li>
+              <li><%= link_to "Сотрудничество", "#"  %></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
