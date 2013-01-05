@@ -4,11 +4,11 @@
   <%@products.each do |p|%>
     <div class="span3">
       
-          <a href="/products/<%=p.id%>" class="thumbnail" trigger="focus" rel="popover" 
+          <a href="/products/<%=p.id%>" class="thumbnail" rel="popover" 
                 data-content=" <b>6'' E-Ink Pearl</b> дисплей      
                 <b>1 месяц</b> работы без подзарядки<br>
                 <b>Вес 170</b> грамм<br>
-                <b>Wi-Fi</b> модуль" data-original-title="<%=p.name%>">
+                <b>Wi-Fi</b> модуль" title="<%=p.name%>">
                 
                 <%=image_tag p.title_image%>
           </a>

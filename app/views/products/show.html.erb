@@ -2,11 +2,7 @@
   <%@products.each do |p|%>
     <div class="span2">
       
-          <a href="/products/<%=p.id%>" class="thumbnail" trigger="focus" rel="popover" 
-                data-content=" <b>6'' E-Ink Pearl</b> дисплей      
-                <b>1 месяц</b> работы без подзарядки<br>
-                <b>Вес 170</b> грамм<br>
-                <b>Wi-Fi</b> модуль" data-original-title="<%=p.name%>">
+          <a href="/products/<%=p.id%>" class="thumbnail" rel="tooltip" title="<%=p.name%>" >
                 
                 <%=image_tag p.title_image%>
           </a>
@@ -26,7 +22,14 @@
 <div class="span5">
   <p>
 <h1><%= @product.name %> <small><%= @product.price %>тг.</small></h1>
-<%=link_to  "Купить", {:controller =>'orders', :action=>'new',:product_id=>@product.id},:class=>"btn btn-danger"%>
+<div class=" form-inline">
+<%= form_for( @order, :url => {:controller=>"orders",:action => "new"}, :method => "get") do |f|%>
+      
+      <%=f.number_field  :count,:class=>"span1",:value=>1%> шт.
+      <%=f.hidden_field  :product_id,:class=>"span1", :value=>@product.id%>
+      <button type="submit" class="btn">Добавить</button>
+<%end%>
+</div>
 
 <p>
   <%=raw @product.content %>

@@ -34,15 +34,19 @@ class OrdersController < ApplicationController
     
     @basket=Basket.where(:name=>cookies[:uid]).first_or_create
 
-    @order = Order.create(:product_id=>params[:product_id],:basket_id=>@basket.id,:count=>1)
+    @order = Order.new(params[:order])
+    @order.basket_id = @basket.id
+    @order.save
 
     cookies[:basket_count] = {
       :value => @basket.orders.count.to_s,
       :expires => 20.years.from_now.utc
      }
     
+    @product=Product.find(@order.product_id)
+    
      respond_to do |format|
-      format.html { redirect_to @basket, :notice => 'Продукт удачно добавлен в корзину.' }
+      format.html { redirect_to @product, :notice => 'Продукт удачно добавлен в корзину.' }
       format.json { render json: @order }
     end
   end
