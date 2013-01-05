@@ -14,15 +14,18 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
-$("a[rel=tooltip]")
-      .tooltip({
-         placement:'bottom',
-         html: true
-         })
 
 $("a[rel=popover]")
       .popover({
          placement:'top',
+         trigger:'hover',
          html: true
          })
-      
+
+$("a[rel=popover-bottom]")
+      .popover({
+         placement:'bottom',
+         trigger:'hover',
+         html: true
+         })
+

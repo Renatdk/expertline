@@ -5,10 +5,7 @@
     <div class="span3">
       
           <a href="/products/<%=p.id%>" class="thumbnail" rel="popover" 
-                data-content=" <b>6'' E-Ink Pearl</b> дисплей      
-                <b>1 месяц</b> работы без подзарядки<br>
-                <b>Вес 170</b> грамм<br>
-                <b>Wi-Fi</b> модуль" title="<%=p.name%>">
+                data-content=" <%=p.content.to_s[0..100]%>..." title="<%=p.name%>">
                 
                 <%=image_tag p.title_image%>
           </a>

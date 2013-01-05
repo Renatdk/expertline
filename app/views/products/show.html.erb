@@ -2,7 +2,8 @@
   <%@products.each do |p|%>
     <div class="span2">
       
-          <a href="/products/<%=p.id%>" class="thumbnail" rel="tooltip" title="<%=p.name%>" >
+         <a href="/products/<%=p.id%>" class="thumbnail" rel="popover-bottom" 
+                data-content=" <%=p.content.to_s[0..100]%>..." title="<%=p.name%>">
                 
                 <%=image_tag p.title_image%>
           </a>
