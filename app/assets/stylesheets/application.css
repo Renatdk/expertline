@@ -12,7 +12,7 @@
  *= require_tree .
  */
 
-body{padding-top: 60px;
+body{padding-top: 10px;
      background-image: url("subtle_dots.png");
 }
 
@@ -20,8 +20,8 @@ body{padding-top: 60px;
 	 	 width: 150px;
          height: 60px;
          position: fixed;
-         top: 320px;
-         right: 120px;
+         top: 30px;
+         right: 70px;
 		  -webkit-border-radius: 10px;
 		  -moz-border-radius: 10px;
 		  border-radius: 10px;

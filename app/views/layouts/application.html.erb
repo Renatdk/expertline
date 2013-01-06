@@ -17,6 +17,11 @@
 
   </head>
   <body>
+ <div class="container">
+    <a href="/"><%=image_tag "logo.png", :size=>"200x200"%></a>
+    <%=image_tag "slogan.png", :size=>"450x450"%>
+
+</div>
     <h5>
     <div class="navbar  navbar-static-top">
       <div class="navbar-inner">
@@ -26,9 +31,9 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="/">eXpert-line</a>
           <div class="container nav-collapse">
             <ul class="nav">
+              <li><%= link_to "Главная", "/"  %></li>
               <li><%= link_to "Оплата и доставка", Page.where(:title=>"Оплата и доставка").first  %></li>
               <li><%= link_to "Прайс-лист", :controller => :static_pages, :action => :price_list   %></li>
               <li><%= link_to "Контакты", Page.where(:title=>"Контакты").first  %></li>
