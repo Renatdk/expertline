@@ -1,49 +1,105 @@
-<%= form_for(@sender) do |f| %>
-  <% if @sender.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@sender.errors.count, "error") %> prohibited this sender from being saved:</h2>
+<%s=0%>
+<table class="table">
+  <tr><th>Наименование</th>
+    <th>цена за ед.</th>
+    <th>количество</th>
+    <th>сумма</th>
+    
+  </tr>
 
-      <ul>
-      <% @sender.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%@basket.orders.each do |p|%>
+<tr>
+  <td><%= p.product.name%></td>
+  <td><%=number_to_currency(p.product.price, :format => "%n %u",:unit => "тг.",  :delimiter => " ",:precision => 0)%></td>
+  <td>
+      <%=p.count%>
+  
+      
+      
+  </td>
+  <td><%s=s+p.product.price*p.count%><%=number_to_currency(p.product.price*p.count, :format => "%n %u",:unit => "тг.",  :delimiter => " ",:precision => 0)%></td>
+  
+</tr>
+<%end%>
+<tr><th><a class="btn btn-success" href="/baskets/1"><i class="icon-arrow-left icon-white"></i> В корзину</a></th>
+    <th></th>
+    <th>Общая сумма:</th>
+    <th><%=number_to_currency(s, :format => "%n %u",:unit => "тг.",  :delimiter => " ",:precision => 0)%></th>
+    
+  </tr>
+</table>
+
+    <%= form_tag({:controller => "senders", :action => "create"}, :class => "form-horizontal") do |f|%>
+    <legend>Персональные данные</legend>   
+  <div class="control-group">
+    <label class="control-label" for="sender_email">Email</label>
+    <div class="controls">
+      <%=text_field(:sender, :email, :placeholder=>"Email") %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="sender_tel">Телефон</label>
+    <div class="controls">
+      <%=text_field(:sender, :tel, :placeholder=>"+7 7хх ххх хх хх ") %>
+    </div>
+  </div>
+    <legend>Доставка</legend>   
+<div class="control-group">
+    <label class="control-label" for="inputEmail">Адрес</label>
+    <div class="controls">
+      <%=text_field(:sender, :address,:placeholder=>"Город, улица, дом, квартира") %>
+    </div>
+  </div>  
+  <div class="control-group">
+    <div class="controls">
+      Стоимость доставки: Алматы - 400тг.
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      Другие города прайс-лист на <a href="http://www.kazproduct.kz/ru/tarify-4"  target="_blank">ЕМS</a>.
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
+
+    <legend>Оплата</legend>   
+
+  <div class="control-group">
+    <label class="control-label" for="buy_nal">Наличными </label>
+    <div class="controls ">
+      <label>
+      <%= radio_button(:sender, :buy, 1)%> <b>При доставке</b> (только Алматы)
+      </label>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :address %><br />
-    <%= f.text_field :address %>
+  <div class="control-group">
+    <label class="control-label" for="buy_bank">Банковский перевод</label>
+    <div class="controls form-inline">
+      <label>
+      <%= radio_button(:sender, :buy, 2)%> <b>Все города Казахстана</b> (счет придет на <b>e-mail</b>) (Легко оплачивается в любом банке РК)
+     </label>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :tel %><br />
-    <%= f.text_field :tel %>
+
+
+    <legend>Коментарии</legend>   
+    <div class="control-group">
+    <label class="control-label" for="inputEmail"></label>
+    <div class="controls">
+      <%=text_field(:sender, :commet,:placeholder=>"Привет! Рад заказывать у вас!") %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :commet %><br />
-    <%= f.text_field :commet %>
+    <div class="control-group">
+    
+    <div class="controls">
+        <button type="submit" class="btn btn-danger">Заказать <i class="icon-arrow-right icon-white"></i></button>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :product_id %><br />
-    <%= f.number_field :product_id %>
-  </div>
-  <div class="field">
-    <%= f.label :sicret %><br />
-    <%= f.text_field :sicret %>
-  </div>
-  <div class="field">
-    <%= f.label :basket_id %><br />
-    <%= f.number_field :basket_id %>
-  </div>
-  <div class="field">
-    <%= f.label :buy %><br />
-    <%= f.number_field :buy %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+      
+      <%=hidden_field(:sender, :basket_id,:class=>"span1", :value=>@basket.id) %> 
+      <%=hidden_field(:sender, :status_id,:class=>"span1", :value=>1) %> 
+      <%=hidden_field(:sender, :sicret,:class=>"span1", :value=>SecureRandom.hex(10).to_s) %>     
+      <br><br>
+      После размещения вами заказа, наш менеджер позвонит вам и уточнит вопросы доставки. Спасибо за обращение  в eXpert-line!
+    <%end%>
+

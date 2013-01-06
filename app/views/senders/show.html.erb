@@ -1,6 +1,49 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <b>№ Заказа:</b>
+  <%= @order.id%>
+</p>
+<%s=0%>
+<h1>Корзина</h1>
+<%@basket.orders.each do |p|%>
+<%=p.count%> шт. <%=p.post.title%> за <%=p.post.price%> = <%=p.post.price*p.count%><%s=s+p.post.price*p.count%><br>
+<%end%>
+<h3>Итого(без учета доставки): <%=number_to_currency(s, :format => "%n %u",:unit => "тг.",  :delimiter => " ",:precision => 0)%></h3>
+<br>
+<p>
+  <b>Email:</b>
+  <%= @order.email %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @order.address %>
+</p>
+
+<p>
+  <b>Телефон:</b>
+  <%= @order.tel %>
+</p>
+<p>
+  <b>Оплата:</b>
+  <% if @order.buy==1 %>
+  наличными
+  <%else%>
+  банковский перевод. Счет оптаты выслан на ваш email.
+  <%end%>
+</p>
+<p>
+  <b>Комментарии:</b>
+  <%= @order.comentdata %>
+</p>
+
+
+<a href="/">На главную</a>
+
+<p id="notice"><%= notice %></p>
+
+<p>
   <b>Email:</b>
   <%= @sender.email %>
 </p>

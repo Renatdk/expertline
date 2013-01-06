@@ -31,7 +31,7 @@ class OrdersController < ApplicationController
       :expires => 20.years.from_now.utc
       }
     end
-    
+    2
     @basket=Basket.where(:name=>cookies[:uid]).first_or_create
 
     @order = Order.new(params[:order])
@@ -44,9 +44,9 @@ class OrdersController < ApplicationController
      }
     
     @product=Product.find(@order.product_id)
-    
+
      respond_to do |format|
-      format.html { redirect_to @product, :notice => 'Продукт удачно добавлен в корзину.' }
+      format.html { redirect_to @product, :notice => 'Продукт успешно добавлен в корзину.' }
       format.json { render json: @order }
     end
   end
@@ -102,7 +102,7 @@ class OrdersController < ApplicationController
      }
      
     respond_to do |format|
-      format.html { redirect_to @basket }
+      format.html { redirect_to @basket,:notice => 'Продукт успешно удален из корзины.'  }
       format.json { head :no_content }
     end
   end

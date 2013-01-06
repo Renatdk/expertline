@@ -25,7 +25,7 @@ class SendersController < ApplicationController
   # GET /senders/new.json
   def new
     @sender = Sender.new
-
+    @basket = Basket.where(:name=>cookies[:uid]).first
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @sender }
