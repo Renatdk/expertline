@@ -4,4 +4,5 @@ class Order < ActiveRecord::Base
   belongs_to :basket
   belongs_to :product
 
+  default_scope order('id ASC')
 end
