@@ -5,7 +5,7 @@ ActiveAdmin.setup do |config|
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
-  config.site_title = "Expert Line"
+  config.site_title = "eXpert-line"
 
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
@@ -149,4 +149,7 @@ ActiveAdmin.setup do |config|
   #
   # Set the CSV builder options (default is {})
   # config.csv_options = {}
+
+  config.register_javascript 'tinymce.js'
+
 end
