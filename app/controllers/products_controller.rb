@@ -5,8 +5,9 @@ class ProductsController < ApplicationController
     @products = Product.all
 
     respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @products }
+      format.html
+      format.csv { send_data @products.to_csv }
+      format.xls # { send_data @products.to_csv(col_sep: "\t") }
     end
   end
 

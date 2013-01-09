@@ -1,7 +1,8 @@
 class StaticPagesController < ApplicationController
+  
   def price_list
-    @products=Product.all
-    
+   @products=Product.all
+
   end
 
 end
