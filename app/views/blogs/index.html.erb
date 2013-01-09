@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="span6">
+
+  <h3><%=raw @blog.title %></h3>
+<hr>
+
+<%=image_tag @blog.image%>
+<p>
+  
+  <%=raw @blog.body %>
+
+</p>
+  </div>
+  <div class="span2">
+  <ul class="thumbnails"> 
+      <%@blogs.each do |b|%>
+      <li class="thumbnail" >
+      <%=image_tag b.image, :align=>"right", :width=>"60" %><%= link_to b.title, b  %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+
+</div>
