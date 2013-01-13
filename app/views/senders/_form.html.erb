@@ -38,6 +38,18 @@
     </div>
   </div>
   <div class="control-group">
+    <label class="control-label" for="sender_company">Компания</label>
+    <div class="controls">
+      <%=text_field(:sender, :company, :placeholder=>"Наименование вашей компании") %>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="sender_name">Контактное лицо</label>
+    <div class="controls">
+      <%=text_field(:sender, :name, :placeholder=>"Ваше Ф.И.О.") %>
+    </div>
+  </div>
+  <div class="control-group">
     <label class="control-label" for="sender_tel">Телефон</label>
     <div class="controls">
       <%=text_field(:sender, :tel, :placeholder=>"+7 7хх ххх хх хх ") %>
@@ -47,17 +59,17 @@
 <div class="control-group">
     <label class="control-label" for="inputEmail">Адрес</label>
     <div class="controls">
-      <%=text_field(:sender, :address,:placeholder=>"Город, улица, дом, квартира") %>
+      <%=text_field(:sender, :address,:placeholder=>"Город, улица, дом, офис") %>
     </div>
   </div>  
   <div class="control-group">
     <div class="controls">
-      Стоимость доставки: Алматы - 400тг.
+      Стоимость доставки: в черте г.Алматы – 400 тенге.
     </div>
   </div>
   <div class="control-group">
     <div class="controls">
-      Другие города прайс-лист на <a href="http://www.kazpost.kz/ru/tarify-4"  target="_blank">ЕМS</a>.
+      Другие города Казахстана: согласно прайс-листу <a href="http://www.kazpost.kz/ru/tarify-4"  target="_blank">ЕМS</a>.
     </div>
   </div>
 
@@ -65,41 +77,55 @@
     <legend>Оплата</legend>   
 
   <div class="control-group">
-    <label class="control-label" for="buy_nal">Наличными </label>
+    <label class="control-label" for="sender_buy_1">Наличными </label>
     <div class="controls ">
-      <label>
-      <%= radio_button(:sender, :buy, 1)%> <b>При доставке</b> (только Алматы)
+      <label class="radio">
+      <%= radio_button(:sender, :buy, 1)%> <b>При доставке товара </b> (только по городу Алматы)
       </label>
     </div>
   </div>
   <div class="control-group">
-    <label class="control-label" for="buy_bank">Банковский перевод</label>
+    <label class="control-label" for="sender_buy_2">Оплата на расчетный счет</label>
     <div class="controls form-inline">
-      <label>
-      <%= radio_button(:sender, :buy, 2)%> <b>Все города Казахстана</b> (счет придет на <b>e-mail</b>) (Легко оплачивается в любом банке РК)
+      <label class="radio">
+      <%= radio_button(:sender, :buy, 2)%><b> Все города Казахстан</b> (счет придет на указанный Вами <b>e-mail</b>)
+
+     </label>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="sender_docs"></label>
+    <div class="controls form-inline">
+      <label class="checkbox">
+      <%= check_box(:sender, :docs)%><b> Требуется ли пакет расчетных документов</b> (счет-фактура, накладная). В разделе «Дополнительная информация» внесите полные реквизиты Вашей компании.
+
      </label>
     </div>
   </div>
 
-
-    <legend>Коментарии</legend>   
+    <legend>Дополнительная информация</legend>   
     <div class="control-group">
     <label class="control-label" for="inputEmail"></label>
     <div class="controls">
-      <%=text_field(:sender, :commet,:placeholder=>"Привет! Рад заказывать у вас!") %>
+      <%=text_area(:sender, :commet,:rows => 10, :cols => 120) %>
     </div>
   </div>
+
+      <%=hidden_field(:order, :basket_id,:class=>"span1", :value=>@basket.id) %> 
+      <%=hidden_field(:order, :sicret,:class=>"span1", :value=>SecureRandom.hex(10).to_s) %>  
+
+
     <div class="control-group">
     
     <div class="controls">
         <button type="submit" class="btn btn-danger">Заказать <i class="icon-arrow-right icon-white"></i></button>
     </div>
   </div>
+    Пункты, отмеченные значком «*», обязательны для заполнения.
       
       <%=hidden_field(:sender, :basket_id,:class=>"span1", :value=>@basket.id) %> 
-      <%=hidden_field(:sender, :status_id,:class=>"span1", :value=>1) %> 
       <%=hidden_field(:sender, :sicret,:class=>"span1", :value=>SecureRandom.hex(10).to_s) %>     
       <br><br>
-      После размещения вами заказа, наш менеджер позвонит вам и уточнит вопросы доставки. Спасибо за обращение  в eXpert-line!
+      После размещения Вами заказа с Вами свяжется наш менеджер. Спасибо за заказ!
     <%end%>
 

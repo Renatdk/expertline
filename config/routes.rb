@@ -1,4 +1,8 @@
 ExpertLine::Application.routes.draw do
+  resources :subcatalogs
+
+  resources :catalogs
+
   resources :blogs
 
   ActiveAdmin.routes(self)

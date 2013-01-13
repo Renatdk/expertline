@@ -49,72 +49,48 @@
 
 
 
-    <div class="container">
-        <div class="row">
-          <div class="span9">
-            <%= bootstrap_flash %>
-            <%= yield %>
-          </div>
-          <div class="span3">
-            <div class="well sidebar-nav">
+<div class="container">
+    <div class="row">
+      <div class="span9">
+        <%= bootstrap_flash %>
+        <%= yield %>
+      </div>
+      <div class="span3">
+        <div class="well sidebar-nav">
+
+          <div class="accordion" id="accordion3">
+            <% @cats.each do |c| %>
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a class="accordion-toggle thumbnail" data-toggle="collapse" data-parent="#accordion3" href="#collapse<%=c.id%>">
+                  <%=c.name%>
+                </a>
+              </div>
+              <div id="collapse<%=c.id%>" class="accordion-body collapse">
+                <div class="accordion-inner">
+                  <ul class="nav nav-list">
+                    <%c.subcatalog.each do |cs|%>
+                          <li><%= link_to cs.name, cs ,:class=>"thumbnail" %></li>
    
-                            
-              <div class="accordion" id="accordion2">
-                <div class="accordion-group">
-                  <div class="accordion-heading">
-                    <a class="accordion-toggle thumbnail" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                      Продукция
-                    </a>
-                  </div>
-                  <div id="collapseOne" class="accordion-body collapse">
-                    <div class="accordion-inner">
-                      <ul class="nav nav-list">
-                              <li><%= link_to "Парикмахерское", "/path1" ,:class=>"thumbnail" %></li>
-                              <li><%= link_to "Косметология", "/path2" ,:class=>"thumbnail" %></li>
-                              <li><%= link_to "Маникюр", "/path3"  ,:class=>"thumbnail"%></li>
-                              <li><%= link_to "Педикюр", "/path3"  ,:class=>"thumbnail"%></li>
-                              <li><%= link_to "Разное", "/path3"  ,:class=>"thumbnail"%></li>
-                            </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-group">
-                  <div class="accordion-heading">
-                    <a class="accordion-toggle thumbnail" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-                      Новинки
-                    </a>
-                  </div>
-                  <div id="collapseTwo" class="accordion-body collapse">
-                    <div class="accordion-inner">
-                      Пока пусто...
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-group">
-                  <div class="accordion-heading">
-                    <a class="accordion-toggle thumbnail" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
-                      Спец предложения
-                    </a>
-                  </div>
-                  <div id="collapseThree" class="accordion-body collapse">
-                    <div class="accordion-inner">
-                      Пока пусто...
-                    </div>
-                  </div>
+                    <%end%>
+                        </ul>
                 </div>
               </div>
+            </div>
 
+            <%end%>
+            
+      </div>
+      
+        </div><!--/.well -->
+      </div><!--/span-->
+    </div><!--/row-->
 
+  <footer>
+    <p>&copy; eXpert-line 2012. Все права защищены. Алматы, ул. Гагарина, д. 232а, + 7 (727) 396 45 03, + 7 701 206 97 31, info@expertline.kz</p>
+  </footer>
 
-            </div><!--/.well -->
-          </div><!--/span-->
-        </div><!--/row-->
-
-      <footer>
-        <p>&copy; eXpert-line 2012. Все права защищены. Алматы, ул. Гагарина, д. 232а, + 7 (727) 396 45 03, + 7 701 206 97 31, info@expertline.kz</p>
-      </footer>
-
-    </div> <!-- /container -->
+</div> <!-- /container -->
 
     <!-- Javascripts
     ================================================== -->

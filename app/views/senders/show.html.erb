@@ -1,88 +1,51 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <b>№ Заказа:</b>
-  <%= @order.id%>
+<h1>№ Заказа:
+  <%= @sender.id%></h1>
 </p>
 <%s=0%>
-<h1>Корзина</h1>
-<%@basket.orders.each do |p|%>
-<%=p.count%> шт. <%=p.post.title%> за <%=p.post.price%> = <%=p.post.price*p.count%><%s=s+p.post.price*p.count%><br>
+<ul>
+<%@sender.basket.orders.each do |p|%>
+<li>
+<%=p.count%> шт. <%=p.product.name%> за <%=p.product.price%> = <%=p.product.price*p.count%><%s=s+p.product.price*p.count%>
+</li>
 <%end%>
+</ul>
 <h3>Итого(без учета доставки): <%=number_to_currency(s, :format => "%n %u",:unit => "тг.",  :delimiter => " ",:precision => 0)%></h3>
 <br>
-<p>
-  <b>Email:</b>
-  <%= @order.email %>
-</p>
-
-<p>
-  <b>Address:</b>
-  <%= @order.address %>
-</p>
-
-<p>
-  <b>Телефон:</b>
-  <%= @order.tel %>
-</p>
-<p>
-  <b>Оплата:</b>
-  <% if @order.buy==1 %>
-  наличными
-  <%else%>
-  банковский перевод. Счет оптаты выслан на ваш email.
-  <%end%>
-</p>
-<p>
-  <b>Комментарии:</b>
-  <%= @order.comentdata %>
-</p>
-
-
-<a href="/">На главную</a>
-
-<p id="notice"><%= notice %></p>
-
 <p>
   <b>Email:</b>
   <%= @sender.email %>
 </p>
 
 <p>
-  <b>Address:</b>
-  <%= @sender.address %>
+  <b>Компания:</b>
+  <%= @sender.company %>
+</p>
+<p>
+  <b>Контактное лицо:</b>
+  <%= @sender.name %>
 </p>
 
 <p>
-  <b>Tel:</b>
+  <b>Телефон:</b>
   <%= @sender.tel %>
 </p>
 
 <p>
-  <b>Commet:</b>
-  <%= @sender.commet %>
+  <b>Адрес:</b>
+  <%= @sender.address %>
 </p>
+
 
 <p>
-  <b>Product:</b>
-  <%= @sender.product_id %>
+  <b>Оплата:</b>
+  <% if @sender.buy==1 %>
+  наличными
+  <%else%>
+  банковский перевод. Счет оптаты будет вам выслан.
+  <%end%>
 </p>
-
 <p>
-  <b>Sicret:</b>
-  <%= @sender.sicret %>
+  <b>Дополнительная информация:</b>
+  <%=raw @sender.commet %>
 </p>
-
-<p>
-  <b>Basket:</b>
-  <%= @sender.basket_id %>
-</p>
-
-<p>
-  <b>Buy:</b>
-  <%= @sender.buy %>
-</p>
-
-
-<%= link_to 'Edit', edit_sender_path(@sender) %> |
-<%= link_to 'Back', senders_path %>

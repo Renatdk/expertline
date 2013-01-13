@@ -82,8 +82,7 @@ class PagesController < ApplicationController
   end
   
   def title
-
-    @products=Product.all
+    @products=Product.where(:title=>true)
   end
 
 

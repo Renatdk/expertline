@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130109162246) do
+ActiveRecord::Schema.define(:version => 20130113142852) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -60,6 +60,13 @@ ActiveRecord::Schema.define(:version => 20130109162246) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "catalogs", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "sortnum"
+  end
+
   create_table "orders", :force => true do |t|
     t.integer  "basket_id"
     t.integer  "product_id"
@@ -83,6 +90,12 @@ ActiveRecord::Schema.define(:version => 20130109162246) do
     t.string   "main_image"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.boolean  "title"
+  end
+
+  create_table "products_subcatalogs", :force => true do |t|
+    t.integer "product_id"
+    t.integer "subcatalog_id"
   end
 
   create_table "senders", :force => true do |t|
@@ -96,6 +109,16 @@ ActiveRecord::Schema.define(:version => 20130109162246) do
     t.integer  "buy"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "company"
+    t.string   "name"
+    t.boolean  "docs"
+  end
+
+  create_table "subcatalogs", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "catalog_id"
   end
 
 end

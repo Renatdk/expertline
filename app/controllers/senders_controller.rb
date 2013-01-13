@@ -13,8 +13,10 @@ class SendersController < ApplicationController
   # GET /senders/1
   # GET /senders/1.json
   def show
-    @sender = Sender.find(params[:id])
 
+
+    @sender = Sender.where(:sicret=>params[:id]).first
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @sender }
@@ -24,6 +26,13 @@ class SendersController < ApplicationController
   # GET /senders/new
   # GET /senders/new.json
   def new
+     if cookies[:uid] == nil
+      cookies[:uid] = {
+      :value => SecureRandom.hex(10),
+      :expires => 20.years.from_now.utc
+      }
+    end
+
     @sender = Sender.new
     @basket = Basket.where(:name=>cookies[:uid]).first
     respond_to do |format|
@@ -44,7 +53,13 @@ class SendersController < ApplicationController
 
     respond_to do |format|
       if @sender.save
-        format.html { redirect_to @sender, notice: 'Sender was successfully created.' }
+
+        OrderMailer.welcome_email(@sender).deliver
+
+        cookies.delete :uid
+        cookies.delete :basket_count
+
+        format.html { redirect_to :action => "show",:id=>@sender.sicret, notice: 'Sender was successfully created.' }
         format.json { render json: @sender, status: :created, location: @sender }
       else
         format.html { render action: "new" }
