@@ -59,8 +59,8 @@ class SendersController < ApplicationController
         cookies.delete :uid
         cookies.delete :basket_count
 
-        format.html { redirect_to :action => "show",:id=>@sender.sicret, notice: 'Sender was successfully created.' }
-        format.json { render json: @sender, status: :created, location: @sender }
+        format.html { redirect_to :action => "show",:id=>@sender.sicret }
+        format.json { render json: @sender, location: @sender }
       else
         format.html { render action: "new" }
         format.json { render json: @sender.errors, status: :unprocessable_entity }

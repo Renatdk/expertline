@@ -6,8 +6,19 @@ ExpertLine::Application.configure do
 
   # Full error reports are disabled and caching is turned on
   config.consider_all_requests_local       = false
-  config.action_controller.perform_caching = true
+   config.action_controller.perform_caching = false
 
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address              => "smtp.yandex.ru",
+    :port                 =>  25,
+    :domain               => 'expertline.kz',
+    :user_name            => 'info@expertline.kz',
+    :password             => '123vasilisa',
+    :authentication       => :login}
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  
   # Disable Rails's static asset server (Apache or nginx will already do this)
   config.serve_static_assets = false
 
