@@ -15,7 +15,8 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @product = Product.find(params[:id])
-    @products = Product.all
+    @subcatalog = @product.subcatalogs.first
+    @products = @subcatalog.products.limit(4)
     @order =Order.new
     
     respond_to do |format|
