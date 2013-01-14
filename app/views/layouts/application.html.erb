@@ -66,7 +66,7 @@
                   <%=c.name%>
                 </a>
               </div>
-              <div id="collapse<%=c.id%>" class="accordion-body collapse <%=if @subcatalog; "in";end;%>">
+              <div id="collapse<%=c.id%>" class="accordion-body collapse <%=if request.fullpath.include? 'subcatalog'; "in";end;%>">
                 <div class="accordion-inner">
                   <ul class="nav nav-list">
                     <%c.subcatalog.each do |cs|%>
@@ -98,7 +98,7 @@
                   Спец предлож
                 </a>
               </div>
-              <div id="collapse" class="accordion-body collapse">
+              <div id="nav-collapse" class="accordion-body collapse">
                 <div class="accordion-inner">
                   <ul class="nav nav-list">
 
