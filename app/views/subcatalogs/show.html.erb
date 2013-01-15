@@ -2,9 +2,9 @@
   <%= @subcatalog.name %>
 </h3>
 <hr>
-<div class="row">
+<ul class="thumbnails">
   <%@subcatalog.products.each do |p|%>
-    <div class="span3">
+    <li class="span3">
       
           <a href="/products/<%=p.id%>" class="thumbnail" rel="popover" 
                 data-content=" <%=p.content.to_s[0..100]%>..." title="<%=p.name%>">
@@ -12,6 +12,6 @@
                 <%=image_tag p.title_image%>
           </a>
       
-    </div>
+    </li>
   <%end%>
-</div>
+</ul>
