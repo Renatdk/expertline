@@ -22,6 +22,10 @@ class BasketsController < ApplicationController
 
     @basket = Basket.where(:name=>cookies[:uid]).first_or_create
 
+    cookies[:basket_count] = {
+      :value => @basket.orders.count.to_s,
+      :expires => 20.years.from_now.utc
+     }
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @basket }

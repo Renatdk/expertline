@@ -30,10 +30,11 @@
     
   </tr>
 </table>
-<div class="alert alert-error">
-  <button type="button" class="close" data-dismiss="alert">&times;</button>
+
   
 <% if @sender.errors.any? %>
+<div class="alert alert-error">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
     <div id="error_explanation">
       <h3>Пожалуйста заполните все поля отмеченные (*). </h3>
 
@@ -43,8 +44,9 @@
       <% end %>
       </ul>
     </div>
+    </div>
   <% end %>
-</div>
+
 
 
     <%= form_tag({:controller => "senders", :action => "create"}, :class => "form-horizontal") do |f|%>
