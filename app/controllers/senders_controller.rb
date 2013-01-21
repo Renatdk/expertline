@@ -33,14 +33,15 @@ class SendersController < ApplicationController
       }
     end
 
-    cookies[:basket_count] = {
-      :value => @basket.orders.count.to_s,
-      :expires => 20.years.from_now.utc
-     }
+
 
     @sender = Sender.new
     @basket = Basket.where(:name=>cookies[:uid]).first
 
+    cookies[:basket_count] = {
+      :value => @basket.orders.count.to_s,
+      :expires => 20.years.from_now.utc
+     }
 
     respond_to do |format|
       if cookies[:basket_count]==0.to_s
