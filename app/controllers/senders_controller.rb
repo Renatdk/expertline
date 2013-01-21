@@ -35,9 +35,16 @@ class SendersController < ApplicationController
 
     @sender = Sender.new
     @basket = Basket.where(:name=>cookies[:uid]).first
+
+
     respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @sender }
+      if cookies[:basket_count]==0.to_s
+          format.html { redirect_to :controller=>"baskets", :action => "show",:id=>1 }
+          format.json { render json: @basket, location: @basket }
+      else
+        format.html # new.html.erb
+        format.json { render json: @sender }
+      end
     end
   end
 
@@ -49,7 +56,15 @@ class SendersController < ApplicationController
   # POST /senders
   # POST /senders.json
   def create
+    if cookies[:uid] == nil
+      cookies[:uid] = {
+      :value => SecureRandom.hex(10),
+      :expires => 20.years.from_now.utc
+      }
+    end
+
     @sender = Sender.new(params[:sender])
+    @basket = Basket.where(:name=>cookies[:uid]).first
 
     respond_to do |format|
       if @sender.save

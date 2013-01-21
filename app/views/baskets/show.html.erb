@@ -47,6 +47,10 @@
 		<a class="btn btn-success" href="/"><i class="icon-arrow-left icon-white"></i> Обратно в магазин</a>
 	</div>
 	<div class=span2>
+		<%if cookies[:basket_count]==0.to_s%>
+		<a class="btn btn-danger disabled" href="#">Оформить заказ <i class="icon-arrow-right icon-white"></i> </a>
+		<%else%>
 		<a class="btn btn-danger" href="/senders/new">Оформить заказ <i class="icon-arrow-right icon-white"></i> </a>
+		<%end%>
 	</div>
 </div>

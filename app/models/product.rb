@@ -1,6 +1,8 @@
 class Product < ActiveRecord::Base
   attr_accessible :content, :main_image, :name, :price, :title_image,  :subcatalog_ids, :title
 
+
+
   has_many :orders
   has_and_belongs_to_many :subcatalogs
   accepts_nested_attributes_for :subcatalogs
