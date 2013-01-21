@@ -10,12 +10,14 @@
         <Cell><Data ss:Type="String">ID</Data></Cell>
         <Cell><Data ss:Type="String">Наименование</Data></Cell>
         <Cell><Data ss:Type="String">Цена</Data></Cell>
+        <Cell><Data ss:Type="String">Норма упаковки</Data></Cell>
       </Row>
     <% @products.each do |product| %>
       <Row>
         <Cell><Data ss:Type="Number"><%= product.id %></Data></Cell>
         <Cell><Data ss:Type="String"><%= product.name %></Data></Cell>
         <Cell><Data ss:Type="Number"><%= product.price %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= product.norm %></Data></Cell>
       </Row>
     <% end %>
     </Table>
