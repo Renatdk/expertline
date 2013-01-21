@@ -26,7 +26,7 @@ body{padding-top: 10px;
 		  -moz-border-radius: 10px;
 		  border-radius: 10px;
 }
-
+.red {color :red;}
 .thumbnail{ background-color: #fff;}
 
 footer{
