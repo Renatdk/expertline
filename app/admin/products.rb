@@ -3,6 +3,10 @@ ActiveAdmin.register Product do
   form do |f|
     f.inputs do
       f.input :title
+      f.input :new
+      f.input :spec
+      f.input :yes
+      f.input :norm
       f.input :subcatalogs, as: :check_boxes
       f.input :name
       f.input :price

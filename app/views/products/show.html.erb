@@ -18,6 +18,7 @@
   <p>
   <img src="<%= @product.main_image %>">
 </p>
+<h4 class="red"><%if @product.yes%>(Есть в наличии)<%else%>(Нет в наличии)<%end%></h4>
 </div>
 
 <div class="span5">

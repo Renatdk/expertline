@@ -6,7 +6,7 @@ class OrderMailer < ActionMailer::Base
     @order = order
     @url  = "http://www.expertline.kz/senders/"+@order.sicret
   		    
-    mail(:to => order.email, :cc => "renatd.k@gmail.com", :subject => "Заказ № "+@order.id.to_s+' '+@order.basket.id.to_s)
+    mail(:to => order.email, :cc => "info@expertline.kz", :subject => "Заказ № "+@order.id.to_s+' '+@order.basket.id.to_s)
   end
 
 end

@@ -15,7 +15,7 @@
   <ul class="thumbnails"> 
       <%@blogs.each do |b|%>
       <li class="thumbnail" >
-      <%=image_tag b.image, :align=>"right", :width=>"60" %><%= link_to b.title, b  %>
+      <%= link_to b.title, b  %>
       </li>
       <% end %>
     </ul>

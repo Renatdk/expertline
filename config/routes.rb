@@ -20,6 +20,8 @@ ExpertLine::Application.routes.draw do
   resources :pages
 
   match 'static_pages/price_list' => 'static_pages#price_list'
+  match 'static_pages/new_products' => 'static_pages#new_products'
+  match 'static_pages/spec_products' => 'static_pages#spec_products'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,0 +1,17 @@
+<h3>
+  Спец.предложения
+</h3>
+<hr>
+<ul class="thumbnails">
+  <%@products.each do |p|%>
+    <li class="span3">
+      
+          <a href="/products/<%=p.id%>" class="thumbnail" rel="popover" 
+                data-content=" <%=p.content.to_s[0..100]%>..." title="<%=p.name%>">
+                
+                <%=image_tag p.title_image%>
+          </a>
+      
+    </li>
+  <%end%>
+</ul>
