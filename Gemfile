@@ -47,3 +47,5 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 gem 'tinymce-rails'
 
 gem "activeadmin", :git => "git://github.com/gregbell/active_admin.git"
+
+gem 'thin'
