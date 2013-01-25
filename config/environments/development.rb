@@ -42,4 +42,12 @@ ExpertLine::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+
+config.before_configuration do
+      I18n.load_path += Dir[Rails.root.join('config', 'locales', '*.{ru,yml}').to_s]
+      I18n.locale = 'ru'
+      I18n.reload!
+    end
+
 end
