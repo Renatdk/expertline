@@ -76,7 +76,7 @@
                   <%=c.name%>
                 </a>
               </div>
-              <div id="collapse<%=c.id%>" class="accordion-body collapse <%=if @subcatalog; "in";end;%>">
+              <div id="collapse<%=c.id%>" class="accordion-body collapse in"%>
                 <div class="accordion-inner">
                   <ul class="nav nav-list">
                     <%c.subcatalog.each do |cs|%>
