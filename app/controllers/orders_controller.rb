@@ -28,7 +28,7 @@ class OrdersController < ApplicationController
     if cookies[:uid] == nil
       cookies[:uid] = {
       :value => SecureRandom.hex(10),
-      :expires => 20.years.from_now.utc
+      :expires => 1.days.from_now.utc
       }
     end
     2
@@ -40,7 +40,7 @@ class OrdersController < ApplicationController
 
     cookies[:basket_count] = {
       :value => @basket.orders.count.to_s,
-      :expires => 20.years.from_now.utc
+      :expires => 1.days.from_now.utc
      }
     
     @product=Product.find(@order.product_id)
@@ -98,7 +98,7 @@ class OrdersController < ApplicationController
 
     cookies[:basket_count] = {
       :value => @basket.orders.count.to_s,
-      :expires => 20.years.from_now.utc
+      :expires => 1.days.from_now.utc
      }
      
     respond_to do |format|
