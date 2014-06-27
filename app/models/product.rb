@@ -1,7 +1,7 @@
 class Product < ActiveRecord::Base
   attr_accessible :content, :main_image, :name, :price, :title_image,  :subcatalog_ids, :title, :new, :spec, :yes, :norm
 
-
+  default_scope order('name ASC')
 
   has_many :orders
   has_and_belongs_to_many :subcatalogs

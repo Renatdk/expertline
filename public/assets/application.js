@@ -1,0 +1,1 @@
+$("a[rel=popover]").popover({placement:"top",trigger:"hover",html:!0}),$("a[rel=popover-bottom]").popover({placement:"bottom",trigger:"hover",html:!0});

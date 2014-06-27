@@ -1,34 +1,26 @@
-
-
 <%s=0%>
 <table class="table">
-  <tr><th>Наименование</th>
+  <tr>
+    <th>Наименование</th>
     <th>цена за ед.</th>
     <th>количество</th>
-    <th>сумма</th>
-    
+    <th>сумма</th>    
   </tr>
 
 <%@basket.orders.each do |p|%>
 <tr>
   <td><%= p.product.name%></td>
   <td><%=number_to_currency(p.product.price, :format => "%n %u",:unit => "тг.",  :delimiter => " ",:precision => 0)%></td>
-  <td>
-      <%=p.count%>
-  
-      
-      
-  </td>
+  <td><%=p.count%></td>
   <td><%s=s+p.product.price*p.count%><%=number_to_currency(p.product.price*p.count, :format => "%n %u",:unit => "тг.",  :delimiter => " ",:precision => 0)%></td>
-  
 </tr>
 <%end%>
-<tr><th><a class="btn btn-success" href="/baskets/1"><i class="icon-arrow-left icon-white"></i> В корзину</a></th>
-    <th></th>
-    <th>Общая сумма:</th>
-    <th><%=number_to_currency(s, :format => "%n %u",:unit => "тг.",  :delimiter => " ",:precision => 0)%></th>
-    
-  </tr>
+<tr>
+  <th><a class="btn btn-success" href="/baskets/1"><i class="icon-arrow-left icon-white"></i> В корзину</a></th>
+  <th></th>
+  <th>Общая сумма:</th>
+  <th><%=number_to_currency(s, :format => "%n %u",:unit => "тг.",  :delimiter => " ",:precision => 0)%></th>
+</tr>
 </table>
 
   
