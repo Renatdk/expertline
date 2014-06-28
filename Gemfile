@@ -17,6 +17,12 @@ group :production do
   gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
 end
 
+
+
+
+
+gem 'rails_12factor', group: :production
+
 # Gems used only for assets and not required
 # in production environments by default.
   gem 'sass-rails',   '~> 3.2.3'
