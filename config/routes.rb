@@ -1,5 +1,6 @@
 ExpertLine::Application.routes.draw do
   resources :subcatalogs
+  resources :subsubcatalogs
 
   resources :catalogs
 

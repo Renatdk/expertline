@@ -9,6 +9,7 @@ ActiveAdmin.register Product do
       f.input :yes, :as => :boolean, :label => "Есть в наличии"
       f.input :norm, :label => "Норма упаковки"
       f.input :subcatalogs, as: :check_boxes, :label => "В разделах"
+      f.input :subsubcatalogs, as: :check_boxes, :label => "В подразделах"
       f.input :name, :label => "Наименование"
       f.input :price, :label => "Цена"
       f.input :content, :label => "Содержание"

@@ -77,10 +77,16 @@
               </div>
               <div id="collapse<%=c.id%>" class="accordion-body collapse in"%>
                 <div class="accordion-inner">
+
                   <ul class="nav nav-list">
                     <%c.subcatalog.each do |cs|%>
-                          <li><%= link_to cs.name, cs ,:class=>"thumbnail" %></li>
-   
+                          <li><%= link_to cs.name, cs ,:class=>"thumbnail" %>
+                              <ul>
+                                <%cs.subsubcatalogs.each do |ssc|%>
+                                  <li class="thumbnail"><%= link_to ssc.name, ssc%></li>
+                                <%end%>
+                              </ul>
+                          </li>
                     <%end%>
                         </ul>
                 </div>
