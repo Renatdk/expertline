@@ -14,7 +14,7 @@
 
 
 body{padding-top: 10px;
-     background-image: url("subtle_dots.png");
+     background-image: url("phon2.jpg");
 }
 
 .right {
@@ -23,6 +23,7 @@ body{padding-top: 10px;
          position: fixed;
          top: 30px;
          right: 40px;
+         opacity: 0.9;
 		  -webkit-border-radius: 10px;
 		  -moz-border-radius: 10px;
 		  border-radius: 10px;
@@ -32,4 +33,13 @@ body{padding-top: 10px;
 
 footer{
 	padding-top: 20px;
+}
+
+.colorise{
+         opacity: 0.9;
+         background: #eee;
+         padding: 10px;
+          -webkit-border-radius: 10px;
+          -moz-border-radius: 10px;
+          border-radius: 10px;   
 }

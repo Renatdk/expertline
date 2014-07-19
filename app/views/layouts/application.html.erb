@@ -17,7 +17,7 @@
 
   </head>
   <body>
- <div class="container">
+ <div class="container colorise">
   <div class="row">
     <div class="span3">
     <a href="/"><%=image_tag "logo2.png", :size=>"200x200"%></a>
@@ -49,6 +49,7 @@
               <li><%= link_to "Блог", "/blogs/"  %></li> 
               <li><%= link_to "Вакансии", Page.where(:title=>"Вакансии").first  %></li>
               <li><%= link_to "Сотрудничество", Page.where(:title=>"Сотрудничество").first  %></li>
+              <li><%= link_to "Заказать презентацию", :controller => :static_pages, :action => :get_present   %></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -58,7 +59,7 @@
 
 
 
-<div class="container">
+<div class="container colorise">
     <div class="row">
       <div class="span9">
         <%= bootstrap_flash %>
@@ -138,12 +139,14 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <%= javascript_include_tag "application" %>
+  
   <div class="right">
     <a href="/baskets/1">
 <center><%=image_tag "korzina.png", :size=>"60x60"%> 
 <h4>Корзина (<%=cookies[:basket_count]%>)<h4></center>
   </a>
   </div>
+  
   <div id="SITEHELP_CONTAINER_3790" class="SITEHELP_CONTAINER_3790"></div>
   <script type="text/javascript" language="javascript"> document.write('<scri' + 'pt type="text/javas' + 'cript" language="javas' + 'cript" src="' + top.location.protocol + '//c.sitehelp.inkiev.net/code.cgi?c=3790' + (top.location.protocol=='http:' ? '' : '&ssl=1') + '&rnd=' + Math.random() + '"></sc' + 'ript>'); </script>
 

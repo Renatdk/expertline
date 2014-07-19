@@ -1,0 +1,51 @@
+
+ <%= form_tag({:controller => "senders", :action => "get_present"}, :class => "form-horizontal") do |f|%>
+
+<legend>Заказ презентации</legend>   
+<p>
+  Эта форма даёт вам возможность отправить заявку на проведение бесплатной презентации в вашем салоне.
+
+В течение, максимум, 4-5 часов после получения сообщения с вами свяжется дежурный консультант.
+
+Пожалуйста, заполните все поля формы, помеченные *.
+</p>
+  <div class="control-group">
+    <label class="control-label" for="sender_name">Контактное лицо*</label>
+    <div class="controls">
+      <%=text_field(:sender, :name, :placeholder=>"Ваше Ф.И.О.") %>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="sender_tel">Телефон*</label>
+    <div class="controls">
+      <%=text_field(:sender, :tel, :placeholder=>"+7 7хх ххх хх хх ") %>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="sender_name">Город*</label>
+    <div class="controls">
+      <%=text_field(:sender, :name, :placeholder=>"Алматы") %>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="sender_name">Адрес*</label>
+    <div class="controls">
+      <%=text_field(:sender, :address, :placeholder=>"п.Абая д.X кв.Y") %>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="sender_name">E-Mail*</label>
+    <div class="controls">
+      <%=text_field(:sender, :email, :placeholder=>"info@mail.ru") %>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="inputEmail">Дополнительная информация</label>
+    <div class="controls">
+      <%=text_area(:sender, :commet,:rows => 10, :cols => 120) %>
+   </div>
+  </div>
+  <div class="controls">
+        <button type="submit" class="btn btn-danger">Заказать</button>
+    </div>
+<%end%>

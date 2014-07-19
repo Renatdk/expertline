@@ -89,6 +89,21 @@ class SendersController < ApplicationController
     end
   end
 
+  def get_present
+    @sender = Sender.new(params[:sender])
+
+    respond_to do |format|
+      if @sender.save
+        OrderMailer.get_present(@sender).deliver
+        format.html { redirect_to '/', notice: "Ваша заявка отправлена!"}
+        format.json { head :no_content}
+      else
+        format.html { redirect_to '/', notice: "Ваша заявка НЕ отправлена!"}
+        format.json { head :no_content}
+      end
+    end
+    
+  end
   # PUT /senders/1
   # PUT /senders/1.json
   def update

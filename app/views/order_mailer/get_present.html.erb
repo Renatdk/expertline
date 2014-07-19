@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>№ Заявки:
+  <%= @order.id%></h1>
+</p>
+<p>
+  <b>Email:</b>
+  <%= @order.email %>
+</p>
+
+<p>
+  <b>Контактное лицо:</b>
+  <%= @order.name %>
+</p>
+
+<p>
+  <b>Телефон:</b>
+  <%= @order.tel %>
+</p>
+
+<p>
+  <b>Адрес:</b>
+  <%= @order.address %>
+</p>
+
+<p>
+  <b>Дополнительная информация:</b>
+  <%=raw @order.commet %>
+</p>
+
+    <p>Спасибо за обращение, хорошего Вам дня!</p>
+  </body>
+</html>
