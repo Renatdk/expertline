@@ -3,6 +3,5 @@ class Sender < ActiveRecord::Base
 
   validates :email,:name, :tel,:address, :presence => true
 
-
   belongs_to :basket
 end
