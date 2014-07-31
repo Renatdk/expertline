@@ -1,0 +1,12 @@
+<h1>Результаты поиска</h1>
+<hr/>
+<table class="table table-condensed table-striped table-bordered">
+<tr>
+	<th>Наименование</th><th>Цена</th><th>Норма упаковки</th>
+</tr>
+<%@products.each do |p|%>
+<tr>
+	<td><%=link_to p.name, p%></td><td><%=number_to_currency(p.price, :format => "%n %u",:unit => "тг.",  :delimiter => " ",:precision => 0)%></td><td><%=p.norm%></td>
+</tr>
+<%end%>
+</table>

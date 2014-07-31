@@ -24,6 +24,7 @@ ExpertLine::Application.routes.draw do
   match 'static_pages/new_products' => 'static_pages#new_products'
   match 'static_pages/spec_products' => 'static_pages#spec_products'
   match 'static_pages/get_present' => 'static_pages#get_present'
+  match 'static_pages/search' => 'static_pages#search'
   post 'senders/get_present' => 'senders#get_present'
 
   # The priority is based upon order of creation:

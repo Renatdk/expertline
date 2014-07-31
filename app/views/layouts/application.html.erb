@@ -56,7 +56,13 @@
               <li><%= link_to "Вакансии", Page.where(:title=>"Вакансии").first  %></li>
               <li><%= link_to "Сотрудничество", Page.where(:title=>"Сотрудничество").first  %></li>
               <li class="btncolor"><%= link_to "Заказать презентацию", :controller => :static_pages, :action => :get_present   %></li>
+
             </ul>
+              <%= form_tag({:controller => "static_pages", :action => "search",:method => 'get'}, :class => "navbar-search pull-left") do %>
+                <p>
+                  <%= text_field_tag :search, params[:search], :class=>"search-query", :placeholder=>"Поиск" %>
+                </p>
+              <% end %>
           </div><!--/.nav-collapse -->
         </div>
       </div>

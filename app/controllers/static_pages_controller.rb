@@ -13,4 +13,8 @@ def spec_products
 	@products=Product.where(:spec=>true)
 end
 
+def search
+  @products = Product.search(params[:search])
+end
+
 end
