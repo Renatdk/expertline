@@ -18,7 +18,7 @@ end
 def search
   @products2 = Product.search(Unicode.capitalize(params[:search]))
   @products1 = Product.search(Unicode.downcase(params[:search]))
-  @products=@products1+@products2
+  @products=@products2+@products1
 end
 
 end
