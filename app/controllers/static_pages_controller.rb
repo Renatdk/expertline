@@ -16,8 +16,8 @@ def spec_products
 end
 
 def search
-  @products1 = Product.search(Unicode.downcase(params[:search]))
   @products2 = Product.search(Unicode.capitalize(params[:search]))
+  @products1 = Product.search(Unicode.downcase(params[:search]))
   @products=@products1+@products2
 end
 
