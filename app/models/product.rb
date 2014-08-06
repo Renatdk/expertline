@@ -1,3 +1,5 @@
+require 'unicode'
+
 class Product < ActiveRecord::Base
   attr_accessible :content, :main_image, :name, :price, :title_image, :subsubcatalog_ids,  :subcatalog_ids, :title, :new, :spec, :yes, :norm
   default_scope order('name ASC')
@@ -21,7 +23,7 @@ class Product < ActiveRecord::Base
 
 def self.search(search)
   if search
-    find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+    find(:all, :conditions => ['name LIKE ?',  "%#{search}%"])
   else
     find(:all)
   end

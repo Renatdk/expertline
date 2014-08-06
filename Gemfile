@@ -51,3 +51,5 @@ gem 'tinymce-rails'
 gem "activeadmin", :git => "git://github.com/gregbell/active_admin.git"
 
 gem 'thin'
+
+gem 'unicode'

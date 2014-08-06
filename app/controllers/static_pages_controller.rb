@@ -1,3 +1,5 @@
+require 'unicode'
+
 class StaticPagesController < ApplicationController
   
   def price_list
@@ -14,7 +16,9 @@ def spec_products
 end
 
 def search
-  @products = Product.search(params[:search])
+  @products1 = Product.search(Unicode.downcase(params[:search]))
+  @products2 = Product.search(Unicode.capitalize(params[:search]))
+  @products=@products1+@products2
 end
 
 end
