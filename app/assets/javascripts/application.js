@@ -28,4 +28,3 @@ $("a[rel=popover-bottom]")
          trigger:'hover',
          html: true
          })
-

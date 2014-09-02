@@ -86,19 +86,21 @@
               <div class="accordion-heading">
                 <a class="accordion-toggle thumbnail" data-toggle="collapse" data-parent="#accordion3" href="#collapse<%=c.id%>">
                   <%=c.name%>
+                  <%if request.url.include?("/subcatalogs/"); cookies[:subcatalog] = request.fullpath; end;%>
                 </a>
               </div>
               <div id="collapse<%=c.id%>" class="accordion-body collapse in"%>
                 <div class="accordion-inner">
-
                   <ul class="nav nav-list">
                     <%c.subcatalog.each do |cs|%>
                           <li><%= link_to cs.name, cs ,:class=>"thumbnail" %>
+                              <%if cookies[:subcatalog]=="/subcatalogs/"+cs.id.to_s %>
                               <ul>
                                 <%cs.subsubcatalogs.each do |ssc|%>
                                   <li class="thumbnail"><%= link_to ssc.name, ssc%></li>
                                 <%end%>
                               </ul>
+                              <%end%>
                           </li>
                     <%end%>
                         </ul>
