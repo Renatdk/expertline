@@ -12,7 +12,7 @@ class SubsubcatalogsController < ApplicationController
     
 	  respond_to do |format|
 	    format.html # show.html.erb
-	    format.json { render json: @subsubcatalogs }
+        format.json{render :json => @subsubcatalogs.to_json, :callback => params['callback']}
 	  end
 	end
 end
