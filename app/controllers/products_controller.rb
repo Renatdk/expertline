@@ -8,6 +8,7 @@ class ProductsController < ApplicationController
       format.html
       format.csv { send_data @products.to_csv }
       format.xls # { send_data @products.to_csv(col_sep: "\t") }
+      format.json { render json: @products }
     end
   end
 
