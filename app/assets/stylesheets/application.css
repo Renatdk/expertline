@@ -34,17 +34,17 @@ footer{
 	padding-top: 20px;
 }
 
-.colorise{
-  background-color: rgba(238, 238, 238, 0.8);
-  background: rgba(238, 238, 238, 0.8);
+/*.colorise{*/
+/*  background-color: rgba(238, 238, 238, 0.8);*/
+/*  background: rgba(238, 238, 238, 0.8);*/
   
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
+/*  -webkit-border-radius: 10px;*/
+/*  -moz-border-radius: 10px;*/
+/*  border-radius: 10px;*/
   
-  padding: 10px;     
+/*  padding: 10px;     */
 
-}
+/*}*/
 
 a{
   color: #53a275;
