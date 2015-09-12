@@ -20,7 +20,7 @@
   <div class="backgroundcolor">
  <div class="container ">
   <div class="row">
-    <div class="span12"><center> Расходные материалы и аксесуары для салонов красоты, косметологических и массажных кабинетов, спа- и фитнес-центров</center></div>
+    <div class="span12 header-text"><center> Расходные материалы и аксесуары для салонов красоты, косметологических и массажных кабинетов, спа- и фитнес-центров</center></div>
   </div>
   <div class="row ">
     <div class="span2">
@@ -76,7 +76,7 @@
         <%= yield %>
       </div>
       <div class="span3">
-        <div class="well sidebar-nav">   
+        <div class="well ">   
          <%= form_tag({:controller => "static_pages", :action => "search",:method => 'get'}, :class => "navbar-search pull-left") do %>
             <p>
               <%= text_field_tag :search, params[:search], :class=>"search-query", :placeholder=>"Поиск" %>
