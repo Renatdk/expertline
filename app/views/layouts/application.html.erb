@@ -30,8 +30,6 @@
     <%=image_tag "shapka saita aug2015.png", :size=>"900x900"%></h2>
     </div>
     <div class="span2">
-    <br>
-    <br>
 <center class="phones">      
               <h4 >+7 (727) 354 30 65</h2>
               <h4 >+7 701 206 97 31</h2>
@@ -85,7 +83,8 @@
       <div class="span3">
         <div class="well">   
          <%= form_tag({:controller => "static_pages", :action => "search",:method => 'get'}, :class => "navbar-search pull-left") do %>
-             <h5> <%= text_field_tag :search, params[:search], :class=>"search-query", :placeholder=>"Поиск" %></h5>
+             <p> <%= text_field_tag :search, params[:search], :class=>"search-query", :placeholder=>"Поиск" %></p>
+             <br>
           <% end %>
         </div>
         <div class="well sidebar-nav">
