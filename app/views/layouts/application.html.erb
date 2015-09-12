@@ -60,12 +60,11 @@
               <li><%= link_to "Заказать презентацию", :controller => :static_pages, :action => :get_present   %></li>
 
             </ul>
-             
-             <ul class="nav navbar-right basket">
-                <li><%=image_tag "shopping-basket.png"%>В корзине <%cookies[:basket_count]%></li>
-             </ul>
                      
           </div><!--/.nav-collapse -->
+           <ul class="nav navbar-nav navbar-right ">
+                <li><%=image_tag "shopping-basket.png"%>В корзине <%cookies["basket_count"]%></li>
+             </ul>
         </div>
       </div>
     </div>
@@ -80,9 +79,9 @@
         <%= yield %>
       </div>
       <div class="span3">
-        <div class="well ">   
+        <div class="well padding-bottom-20">   
          <%= form_tag({:controller => "static_pages", :action => "search",:method => 'get'}, :class => "navbar-search pull-left") do %>
-            <p class="accordion">
+            <p>
               <%= text_field_tag :search, params[:search], :class=>"search-query", :placeholder=>"Поиск" %>
             </p>
           <% end %>
