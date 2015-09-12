@@ -32,8 +32,9 @@
     <div class="span2">
     <br>
     <br>
-<center>      <h4 class="red">+7 (727) 354 30 65</h2>
-              <h4 class="red">+7 701 206 97 31</h2>
+<center>      <h4 >+7 (727) 354 30 65</h2>
+              <h4 >+7 701 206 97 31</h2>
+              <h4 >info@expertline.kz</h2>
 </center>
     </div>
 </div>
@@ -81,9 +82,9 @@
         <%= yield %>
       </div>
       <div class="span3">
-        <div class="well padding-bottom-20">   
+        <div class="well">   
          <%= form_tag({:controller => "static_pages", :action => "search",:method => 'get'}, :class => "navbar-search pull-left") do %>
-            <p>
+            <p class="margin-bottom-20">
               <%= text_field_tag :search, params[:search], :class=>"search-query", :placeholder=>"Поиск" %>
             </p>
           <% end %>
