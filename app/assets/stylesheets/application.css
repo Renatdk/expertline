@@ -76,9 +76,6 @@ a{
 }
 
 a .basket{
+  padding:10px;
   color:black;
-}
-
-.padding-bottom-20{
-  padding-bottom:20px;
 }
