@@ -61,7 +61,9 @@
 
             </ul>
              <ul class="nav navbar-nav navbar-right ">
-                <li><%=image_tag "shopping-basket.png"%>В корзине <%=cookies["basket_count"]%></li>
+                <a href="/baskets/1">
+                  <li><%=image_tag "shopping-basket.png"%> <span class="basket"><%=cookies["basket_count"]%></span></li>
+                </a>
              </ul>         
           </div><!--/.nav-collapse -->
           
@@ -133,13 +135,6 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <%= javascript_include_tag "application" %>
-  
-  <div class="right">
-    <a href="/baskets/1">
-<center><%=image_tag "korzina.png", :size=>"60x60"%> 
-<!-- <h4>Корзина (<%=cookies[:basket_count]%>)<h4> --></center>
-  </a>
-  </div>
   
   <div id="SITEHELP_CONTAINER_3790" class="SITEHELP_CONTAINER_3790"></div>
   <script type="text/javascript" language="javascript"> document.write('<scri' + 'pt type="text/javas' + 'cript" language="javas' + 'cript" src="' + top.location.protocol + '//c.sitehelp.inkiev.net/code.cgi?c=3790' + (top.location.protocol=='http:' ? '' : '&ssl=1') + '&rnd=' + Math.random() + '"></sc' + 'ript>'); </script>
