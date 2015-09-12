@@ -60,11 +60,9 @@
               <li><%= link_to "Заказать презентацию", :controller => :static_pages, :action => :get_present   %></li>
 
             </ul>
-             <ul class="nav navbar-right">
-                <li><%=image_tag "shopping-basket.png"%></li>
-             </ul>
+             
              <ul class="nav navbar-right basket">
-               <li><img src=""> </li>
+                <li><%=image_tag "shopping-basket.png"%>В корзине <%cookies[:basket_count]%></li>
              </ul>
                      
           </div><!--/.nav-collapse -->
