@@ -62,3 +62,9 @@ a{
 .btncolor{
   background-color: #f2144f;
 }
+
+.header-text{
+  color:white;
+  font-size:13px;
+  font-weight:bold;
+}

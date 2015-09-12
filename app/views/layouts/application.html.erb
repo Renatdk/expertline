@@ -60,11 +60,7 @@
               <li><%= link_to "Заказать презентацию", :controller => :static_pages, :action => :get_present   %></li>
 
             </ul>
-              <%= form_tag({:controller => "static_pages", :action => "search",:method => 'get'}, :class => "navbar-search pull-left") do %>
-                <p>
-                  <%= text_field_tag :search, params[:search], :class=>"search-query", :placeholder=>"Поиск" %>
-                </p>
-              <% end %>
+             
           </div><!--/.nav-collapse -->
         </div>
       </div>
@@ -80,6 +76,13 @@
         <%= yield %>
       </div>
       <div class="span3">
+        <div class="well sidebar-nav">   
+         <%= form_tag({:controller => "static_pages", :action => "search",:method => 'get'}, :class => "navbar-search pull-left") do %>
+            <p>
+              <%= text_field_tag :search, params[:search], :class=>"search-query", :placeholder=>"Поиск" %>
+            </p>
+          <% end %>
+        </div>
         <div class="well sidebar-nav">
 
           <div class="accordion" id="accordion3">
