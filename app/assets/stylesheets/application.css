@@ -51,7 +51,7 @@ a{
 }
 
 .backgroundcolor{
-  background-color: #a5cde7;
+  background-color: rgb(67, 167, 212);
   padding-top:10px;
 }
 
@@ -60,5 +60,5 @@ a{
 }
 
 .btncolor{
-  background-color: rgb(67, 167, 212);
+  background-color: #f2144f;
 }
