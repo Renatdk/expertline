@@ -61,9 +61,9 @@
 
             </ul>
              <ul class="nav navbar-nav navbar-right ">
-                <a href="/baskets/1">
-                  <li><%=image_tag "shopping-basket.png"%> <span class="basket"><%=cookies["basket_count"]%></span></li>
-                </a>
+                
+                  <li><a href="/baskets/1"><%=image_tag "shopping-basket.png"%> <span class="basket"><%=cookies["basket_count"]%></span> </a></li>
+               
              </ul>         
           </div><!--/.nav-collapse -->
           
@@ -84,10 +84,11 @@
         <div class="well">   
          <%= form_tag({:controller => "static_pages", :action => "search",:method => 'get'}, :class => "navbar-search pull-left") do %>
              <p> <%= text_field_tag :search, params[:search], :class=>"search-query", :placeholder=>"Поиск" %></p>
-             <br>
+             <br/>
               <br/>
           <% end %>
-         
+         <br/>
+         <br/>
         </div>
         <div class="well sidebar-nav">
 
