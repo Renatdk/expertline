@@ -60,7 +60,10 @@
               <li><%= link_to "Заказать презентацию", :controller => :static_pages, :action => :get_present   %></li>
 
             </ul>
-             
+             <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Link</a></li>
+             </ul>
+                     
           </div><!--/.nav-collapse -->
         </div>
       </div>
@@ -78,7 +81,7 @@
       <div class="span3">
         <div class="well ">   
          <%= form_tag({:controller => "static_pages", :action => "search",:method => 'get'}, :class => "navbar-search pull-left") do %>
-            <p>
+            <p class="accordion">
               <%= text_field_tag :search, params[:search], :class=>"search-query", :placeholder=>"Поиск" %>
             </p>
           <% end %>
@@ -113,34 +116,6 @@
               </div>
             </div>
             <%end%>
-            <div class="accordion-group">
-              <div class="accordion-heading">
-                <a class="accordion-toggle thumbnail" href="/static_pages/new_products">
-                  Новинки
-                </a>
-              </div>
-              <div id="collapse" class="accordion-body collapse"  >
-                <div class="accordion-inner">
-                  <ul class="nav nav-list">
-\
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="accordion-group">
-              <div class="accordion-heading">
-                <a class="accordion-toggle thumbnail" href="/static_pages/spec_products">
-                  Спец.предложения
-                </a>
-              </div>
-              <div id="nav-collapse" class="accordion-body collapse">
-                <div class="accordion-inner">
-                  <ul class="nav nav-list">
-
-                        </ul>
-                </div>
-              </div>
-            </div>
  
       </div>
       

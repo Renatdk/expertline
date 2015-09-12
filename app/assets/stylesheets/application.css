@@ -27,7 +27,7 @@ body{
 		  -moz-border-radius: 10px;
 		  border-radius: 10px;
 }
-.red {color :orange;}
+.red {color :#666;}
 
 .thumbnail{ background-color: #fff;}
 
@@ -66,6 +66,6 @@ a{
 
 .header-text{
   color:white;
-  font-size:13px;
+  font-size:14px;
   font-weight:bold;
 }
