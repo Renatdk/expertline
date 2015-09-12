@@ -75,6 +75,10 @@ a{
   font-size:15px;
 }
 
+a .basket{
+  color:black;
+}
+
 .padding-bottom-20{
   padding-bottom:20px;
 }
