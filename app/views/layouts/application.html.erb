@@ -48,14 +48,13 @@
           </a>
           <div class="container nav-collapse">
             <ul class="nav">
-              <li><%= link_to "Главная", "/"  %></li>
               <li><%= link_to "Оплата и доставка", Page.where(:title=>"Оплата и доставка").first  %></li>
               <li><%= link_to "Прайс-лист", :controller => :static_pages, :action => :price_list   %></li>
               <li><%= link_to "Контакты", Page.where(:title=>"Контакты").first  %></li>
               <li><%= link_to "Блог", "/blogs/"  %></li> 
               <li><%= link_to "Вакансии", Page.where(:title=>"Вакансии").first  %></li>
               <li><%= link_to "Сотрудничество", Page.where(:title=>"Сотрудничество").first  %></li>
-              <li class="btncolor"><%= link_to "Заказать презентацию", :controller => :static_pages, :action => :get_present   %></li>
+              <li><%= link_to "Заказать презентацию", :controller => :static_pages, :action => :get_present   %></li>
 
             </ul>
               <%= form_tag({:controller => "static_pages", :action => "search",:method => 'get'}, :class => "navbar-search pull-left") do %>
