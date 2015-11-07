@@ -51,9 +51,16 @@ a{
   color: #53a275;
 }
 
+.logo{
+  text-align:center;
+  display:block;
+}
+
 .backgroundcolor{
   background-color: rgb(168, 207, 69);
   padding-top:10px;
+  margin-left:-20px;
+  margin-right:-20px;
 }
 
 .navbar{
@@ -62,6 +69,7 @@ a{
 
 .btncolor{
   background-color: #f2144f;
+  
 }
 
 .header-text{
