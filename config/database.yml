@@ -26,9 +26,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: dcf7anb7lp9b7d
+  database: expert_line_production
   pool: 5
-  username: zqwqbpweiuspyh
-  password: 1tAOS_SchEv1uPsPfJEunHrnKD
-  host: ec2-54-243-238-144.compute-1.amazonaws.com
-  port: 5432
+  username: renat
+  password:
