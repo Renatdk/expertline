@@ -1,4 +1,7 @@
 ExpertLine::Application.routes.draw do
+  resources :slide_shows
+
+
   resources :subcatalogs
   resources :products_subcatalogs
   resources :subsubcatalogs

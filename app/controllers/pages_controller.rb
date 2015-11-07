@@ -83,6 +83,7 @@ class PagesController < ApplicationController
   
   def title
     @products=Product.where(:title=>true)
+    @slide_shows=SlideShow.all
   end
 
 

@@ -1,3 +1,9 @@
+
+<div id="owl-demo" class="owl-carousel owl-theme">
+    <%@slide_shows.each do |ss|%>
+        <a class="item " href="<%=ss.link%>"><img src="<%=ss.image%>"></a>
+    <%end%>
+</div>
 <h2>Продукция</h2>
     <hr>
 <ul class="thumbnails">

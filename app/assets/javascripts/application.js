@@ -15,16 +15,30 @@
 //= require twitter/bootstrap
 //= require_tree .
 
-$("a[rel=popover]")
-      .popover({
-         placement:'top',
-         trigger:'hover',
-         html: true
-         })
 
-$("a[rel=popover-bottom]")
-      .popover({
-         placement:'bottom',
-         trigger:'hover',
-         html: true
-         })
+$("#owl-demo").owlCarousel({
+
+    autoPlay: 10000, //Set AutoPlay to 3 seconds
+    // navigation : true, // Show next and prev buttons
+    slideSpeed : 300,
+    paginationSpeed : 400,
+    singleItem:true,
+
+
+     slideSpeed : 200,
+    paginationSpeed : 3000,
+    rewindSpeed : 1000,
+
+
+             //Pagination
+    pagination : true,
+    paginationNumbers: false,
+    // "singleItem:true" is a shortcut for:
+    // items : 1,
+    // itemsDesktop : false,
+    // itemsDesktopSmall : false,
+    // itemsTablet: false,
+    // itemsMobile : false
+
+});
+

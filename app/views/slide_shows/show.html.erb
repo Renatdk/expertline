@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Link:</b>
+  <%= @slide_show.link %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= @slide_show.image %>
+</p>
+
+
+<%= link_to 'Edit', edit_slide_show_path(@slide_show) %> |
+<%= link_to 'Back', slide_shows_path %>
