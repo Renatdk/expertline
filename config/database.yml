@@ -6,12 +6,13 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: dcf7anb7lp9b7d
+  database: d9aunmjij7q1i3
   pool: 5
-  username: zqwqbpweiuspyh
-  password: 1tAOS_SchEv1uPsPfJEunHrnKD
-  host: ec2-54-243-238-144.compute-1.amazonaws.com
+  username: rjfwpwoucczuki
+  password: 3zNun4t06ymBx4ddMP29b2TYjK
+  host: ec2-54-83-204-159.compute-1.amazonaws.com
   port: 5432
+  sslmode: require
   
 
 # Warning: The database defined as "test" will be erased and
@@ -26,9 +27,10 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: dcf7anb7lp9b7d
+  database: d9aunmjij7q1i3
   pool: 5
-  username: zqwqbpweiuspyh
-  password: 1tAOS_SchEv1uPsPfJEunHrnKD
-  host: ec2-54-243-238-144.compute-1.amazonaws.com
+  username: rjfwpwoucczuki
+  password: 3zNun4t06ymBx4ddMP29b2TYjK
+  host: ec2-54-83-204-159.compute-1.amazonaws.com
   port: 5432
+  sslmode: require

@@ -59,8 +59,6 @@ a{
 .backgroundcolor{
   background-color: rgb(168, 207, 69);
   padding-top:10px;
-  margin-left:-20px;
-  margin-right:-20px;
 }
 
 .navbar{
@@ -96,4 +94,8 @@ a .basket{
 
 .search-query{
   white:100%;
+}
+
+.header-image{
+  margin-top:10px;
 }
